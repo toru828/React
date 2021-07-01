@@ -6,6 +6,7 @@ import IndexPage from './pages/IndexPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
+import ChangePasswordPage from './pages/ChangePasswordPage';
 
 import AuthContext from './store/AuthContext';
 
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <ProfilePage />
+        </Route>
+        <Route path="/changepassword">
+          <ChangePasswordPage />
         </Route>
       </Switch>
     </Layout>

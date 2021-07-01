@@ -19,8 +19,8 @@ const Profile = () => {
         "Authorization": token
       }
     })
-    .then(reponse => {
-      setUser(reponse.data.data);
+    .then(response => {
+      setUser(response.data.data);
       setError(null);
     })
     .catch((error) => {

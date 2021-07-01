@@ -41,8 +41,8 @@ const SignupForm = () => {
       },
       body: JSON.stringify(signupData),
     })
-    .then(response => {
-      if (response.status == 200) {
+    .then(reponse => {
+      if (reponse.status == 200) {
         setMessage("Signup successfully");
         setShowForm(false);
         return;

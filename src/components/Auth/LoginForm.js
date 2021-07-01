@@ -9,7 +9,6 @@ import AuthContext from '../../store/AuthContext';
 const LoginForm = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [message, setMessage] = useState(null);
-  const [token, setToken] = useState('');
 
   const authCtx = useContext(AuthContext);
 
@@ -34,12 +33,12 @@ const LoginForm = () => {
     const password = passwordInput.current.value;
     const signupAPI = `http://localhost:5151/login?email=${email}&password=${password}`;
     fetch(signupAPI)
-    .then(reponse => {
-      if (reponse.status !== 200) {
+    .then(response => {
+      if (response.status !== 200) {
         throw new Error("Your email or password is invalid!");
       }
 
-      return reponse.json();
+      return response.json();
     })
     .then(data => {
       authCtx.login(data.data);
@@ -47,6 +46,7 @@ const LoginForm = () => {
     .catch((error) => {
       setMessage(error.message);
     });
+    
   }
 
   return (
