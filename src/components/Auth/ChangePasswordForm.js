@@ -41,14 +41,13 @@ import React, {
       const signupData = {
         new_password: passwordInput.current.value,
       };
-      axios.post('http://localhost:5151/change_password', {
+      axios.post('http://localhost:5151/change_password',
+        {
+          "new_password": passwordInput.current.value
+        },{
       headers: {
         "Authorization": token
-      }, 
-      body: {
-        "password": passwordInput.current.value
-      }
-    })
+        }})
 
       // fetch(signupAPI, {
       //   method: "POST",
